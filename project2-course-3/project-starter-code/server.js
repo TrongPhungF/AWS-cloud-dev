@@ -39,6 +39,7 @@ app.get('/filteredimage', async (req, res) => {
   }
 
   try {
+    console.log(image_url);
     // 2. Call filterImageFromURL(image_url) to filter the image
     const filteredImagePath = await filterImageFromURL(image_url);
 
@@ -52,7 +53,9 @@ app.get('/filteredimage', async (req, res) => {
       deleteLocalFiles([filteredImagePath]);
     });
   } catch (error) {
+    console.log(error);
     res.status(422).send({ message: 'Unable to process the image at the provided URL.' });
+    // res.status(422).send({ message: error });
   }
 });
 
@@ -62,6 +65,9 @@ app.get('/filteredimage', async (req, res) => {
     res.send("try GET /filteredimage?image_url={{}}")
   } );
   
+  app.get('/health', (req, res) => {
+    res.status(200).send('OK');
+  });
 
   // Start the Server
   app.listen( port, () => {
