@@ -144,7 +144,7 @@ Test with invalid URLs or non-image content. The API should return appropriate e
 ### Example Test Command
 
 ```bash
-curl "http://http://project-starter-code-dev.us-east-1.elasticbeanstalk.com/filteredimage?image_url=https://upload.wikimedia.org/wikipedia/commons/b/bd/Golden_tabby_and_white_kitten_n01.jpg"
+curl "http://project-starter-code-dev.us-east-1.elasticbeanstalk.com/filteredimage?image_url=https://upload.wikimedia.org/wikipedia/commons/b/bd/Golden_tabby_and_white_kitten_n01.jpg"
 ```
 
 Expected Result: A successfully processed image should be returned.
